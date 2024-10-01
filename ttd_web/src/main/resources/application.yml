@@ -1,0 +1,40 @@
+
+server:
+  port: 9737
+spring:
+  rabbitmq:
+    host: localhost
+    username: admin
+    password:
+    port: 5672
+    virtual-host: /
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    password:
+  data:
+    mongodb:
+      database: ttd
+      uri: mongodb://root:password@localhost:27017
+  datasource:
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/ttd_agency?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 10
+# Sa-Token 配置
+sa-token:
+  token-name: token
+  timeout: 259200
+  activity-timeout: -1
+  is-concurrent: false
+  is-share: true
+  token-style: random-32
+  is-log: false
+app:
+  id: ttd-web

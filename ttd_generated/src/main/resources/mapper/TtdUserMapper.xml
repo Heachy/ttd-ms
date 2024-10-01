@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.generated.mapper.TtdUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cy.generated.domain.TtdUser">
+        <id column="id" property="id" />
+        <result column="openid" property="openid" />
+        <result column="session_key" property="sessionKey" />
+        <result column="msg_id" property="msgId" />
+        <result column="money" property="money" />
+        <result column="credit_score" property="creditScore" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, openid, session_key, msg_id, money, credit_score
+    </sql>
+
+    <select id="getUserIdByOpenId" resultType="long">
+        SELECT id
+        FROM ttd_user WHERE openid=#{openid}  LIMIT 1
+    </select>
+
+</mapper>
