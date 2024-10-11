@@ -8,9 +8,17 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.security.auth.message.AuthException;
 
+/**
+ * @author Heachy
+ */
 @RestControllerAdvice
 public class SaTokenException {
-    // 全局异常拦截（拦截项目中的NotLoginException异常）
+
+    /** 全局异常拦截（拦截项目中的NotLoginException异常）
+     *
+     * @param nle 异常
+     * @return 自定义异常信息
+     */
     @ExceptionHandler(NotLoginException.class)
     public CommonResult<String> handlerNotLoginException(NotLoginException nle) {
 

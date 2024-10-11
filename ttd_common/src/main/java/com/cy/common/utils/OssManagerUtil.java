@@ -10,6 +10,7 @@ import java.io.InputStream;
 
 /**
  * 阿里Oss对象存储工具类
+ * @author Heachy
  */
 public class OssManagerUtil {
 
