@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Heachy
+ */
 @RestController
 @RequestMapping("/wx")
 public class WxController {
-    @Value("${mytag}")
 
+    @Value("${mytag}")
     private String mytag;
 
     WxServiceImpl wxService;
@@ -37,7 +40,7 @@ public class WxController {
 
     @PostMapping("/test")
     public CommonResult<Map<String,Object>> test(String username,String password){
-        Map<String,Object> map=new HashMap<>();
+        Map<String,Object> map=new HashMap<>(2);
 
         map.put("username",username);
 
@@ -46,10 +49,4 @@ public class WxController {
         return CommonResult.success(map);
     }
 
-//    @PostMapping("/addMsg")
-//    public CommonResult<String> test2(){
-//        wxService.addMsg();
-//
-//        return CommonResult.success("map");
-//    }
 }

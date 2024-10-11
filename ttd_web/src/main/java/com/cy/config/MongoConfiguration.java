@@ -10,19 +10,22 @@ import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
 import javax.annotation.Resource;
 
 
+/**
+ * @author Heachy
+ */
 @Configuration
 public class MongoConfiguration {
 
-//    @Resource
-//    private MongoDatabaseFactorySupport mongoDatabaseFactorySupport;
-//
-//    @Resource
-//    private MappingMongoConverter mappingMongoConverter;
-//
-//    @Bean
-//    public MongoTemplate mongoTemplate() {
-//
-//        mappingMongoConverter.setTypeMapper(new DefaultMongoTypeMapper(null));
-//        return new MongoTemplate(mongoDatabaseFactorySupport, mappingMongoConverter);
-//    }
+    @Resource
+    private MongoDatabaseFactorySupport mongoDatabaseFactorySupport;
+
+    @Resource
+    private MappingMongoConverter mappingMongoConverter;
+
+    @Bean
+    public MongoTemplate mongoTemplate() {
+
+        mappingMongoConverter.setTypeMapper(new DefaultMongoTypeMapper(null));
+        return new MongoTemplate(mongoDatabaseFactorySupport, mappingMongoConverter);
+    }
 }
