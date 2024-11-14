@@ -4,6 +4,9 @@ import com.cy.common.api.CommonResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+/**
+ * @author Heachy
+ */
 @RestControllerAdvice
 public class GlobalExceptionAdvisor {
     @ExceptionHandler(value = ApiException.class)

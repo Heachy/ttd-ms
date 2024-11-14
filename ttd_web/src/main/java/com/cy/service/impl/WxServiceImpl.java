@@ -3,7 +3,6 @@ package com.cy.service.impl;
 import cn.dev33.satoken.secure.SaSecureUtil;
 import cn.dev33.satoken.stp.StpUtil;
 import com.alibaba.fastjson.JSONObject;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.cy.common.api.CommonResult;
 import com.cy.dto.WxMsgDto;
 import com.cy.generated.domain.StudentMsg;
@@ -16,7 +15,6 @@ import com.cy.statistics.service.StatisticsService;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,8 +62,6 @@ public class WxServiceImpl implements WxService {
 
         JSONObject jsonObject = JSONObject.parseObject(result);
 
-        System.out.println(jsonObject);
-
         if (jsonObject == null || jsonObject.getString("session_key") == null) {
             return CommonResult.failed("登录失败");
         }
@@ -88,7 +84,7 @@ public class WxServiceImpl implements WxService {
             statisticsService.createStatistics(user.getId());
         }
         //根据登录鉴权自行返回登录结果
-        Map<String,Object> map=new HashMap<>();
+        Map<String,Object> map=new HashMap<>(10);
 
         StpUtil.login(openid);
 

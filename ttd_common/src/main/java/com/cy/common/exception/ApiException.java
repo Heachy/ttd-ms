@@ -3,6 +3,9 @@ package com.cy.common.exception;
 import com.cy.common.api.IStatusCode;
 import lombok.Getter;
 
+/**
+ * @author Heachy
+ */
 public class ApiException extends RuntimeException{
     @Getter
     private IStatusCode statusCode;

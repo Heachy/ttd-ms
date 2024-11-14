@@ -2,7 +2,6 @@ package com.cy.controller;
 
 import com.cy.common.api.CommonResult;
 import com.cy.common.utils.OssManagerUtil;
-import com.cy.generated.domain.TtdUser;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

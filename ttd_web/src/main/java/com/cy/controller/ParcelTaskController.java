@@ -6,7 +6,6 @@ import com.cy.common.utils.OssManagerUtil;
 import com.cy.dto.WxMsgDto;
 import com.cy.generated.domain.IncidentalMsg;
 import com.cy.generated.domain.ParcelTask;
-import com.cy.generated.domain.TtdUser;
 import com.cy.generated.mapper.TtdUserMapper;
 import com.cy.generated.service.ParcelTaskService;
 import com.cy.generated.service.SocketHistoryService;
