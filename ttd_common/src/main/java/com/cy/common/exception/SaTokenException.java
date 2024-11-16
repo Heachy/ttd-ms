@@ -36,7 +36,7 @@ public class SaTokenException {
         };
         System.out.println("token异常拦截：" + message);
         // 返回给前端
-        return CommonResult.failed(message);
+        return CommonResult.unauthorized(message);
     }
 
     @ExceptionHandler(AuthException.class)
